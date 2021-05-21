@@ -7,33 +7,31 @@ module.exports = {
     'prettier',
     'prettier/react'
   ],
-  plugin: ['react', 'import', 'jsx-a11y'],
+  plugins: ['react', 'import', 'jsx-a11y'],
   rules: {
     'no-console': 1,
     'no-unused-vars': 1,
     'react/prop-types': [
       'enabled',
-      {
-        ignore: ignore,
-        customValidators: 'customValidator'
-      }
-    ],
-    env: {
-      es6: true,
-      browser: true,
-      node: true
-    },
-    settings: {
-      react: {
-        version: 'detect'
-      }
-    },
-    parserOptions: {
-      ecmaVersion: 2018,
-      sourceType: 'module',
-      ecmaFeatures: {
-        jsx: true
-      }
+      { ignore: 'ignore', customValidators: 'customValidator' }
+    ]
+  },
+  env: {
+    jest: true,
+    es6: true,
+    browser: true,
+    node: true
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
     }
   }
 };
