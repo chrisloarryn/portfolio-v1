@@ -1867,6 +1867,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/sora@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/sora/-/sora-4.3.0.tgz#a8e52560a06b4fd0a77165272f869ce20ea6d91a"
+  integrity sha512-JgHSk8LdGxgd8PrK/80uJfuSvdzZKsDZ56teNM3J6rIY3ujYWA9vo8dtPGeJKRwJrI9WUIWOqTC8s6RBQivjpA==
+
 "@hapi/accept@5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.1.tgz#068553e867f0f63225a506ed74e899441af53e10"

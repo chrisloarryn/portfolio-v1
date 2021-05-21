@@ -36,4 +36,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 chakra-ui [https://chakra-ui.com/docs/getting-started]
 storybook [https://storybook.js.org/docs/react/get-started/install] `yarn storybook`
 prettier [https://prettier.io/docs/en/install.html]
-
+vs code extension `vivaxy.vscode-conventional-commits`
+custom font [https://fontsource.org/fonts/sora]
