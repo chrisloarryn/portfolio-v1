@@ -39,8 +39,8 @@ const Intro = () => {
       </Heading>
       <ChakraContainer p={0}>
         <Text mb="2rem">
-          Hey there! I’m Greg, a self-taught developer exploring what’s possible
-          on the web.
+          Hey there! I’m Cristobal, a self-taught developer exploring what’s
+          possible on the web.
         </Text>
         <Text mb="2rem">
           I like to spend my time designing and building projects that interest
