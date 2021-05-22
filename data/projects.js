@@ -1,5 +1,5 @@
-import { Logo } from '@/components/svg/logo';
-import { MagicMirrorLogo } from '@/components/svg/mmLogo';
+import { Logo } from '@/components/svg/logo'
+import { MagicMirrorLogo } from '@/components/svg/mmLogo'
 import {
   electron,
   figma,
@@ -8,7 +8,7 @@ import {
   react,
   socketIO,
   storybook
-} from './tools';
+} from './tools'
 
 export default [
   {
@@ -18,7 +18,7 @@ export default [
       'An IoT project inspired by the original Magic Mirror by Michael Teeuw.',
     tools: [react, electron, nodejs, socketIO],
     live: null,
-    repo: 'https://github.com/gregogun/magic-mirror-react',
+    repo: 'https://github.com/chrisloarryn/magic-mirror-react',
     id: 1,
     feature: true
   },
@@ -26,11 +26,11 @@ export default [
     logo: <Logo />,
     title: 'Portfolio V2',
     description:
-      'This site! Building the 2nd iteration of my personal portfolio in real time on Twitch and Youtube.',
+      'This site! Building the 2nd iteration of my personal portfolio in real time.',
     tools: [react, nextjs, storybook, figma],
     live: null,
-    repo: 'https://github.com/gregogun/magic-mirror-react',
+    repo: 'https://github.com/chrisloarryn/magic-mirror-react',
     id: 2,
     feature: true
   }
-];
+]
