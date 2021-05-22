@@ -1,12 +1,12 @@
-import { Box, VStack } from '@chakra-ui/react';
-import { Button } from '@chakra-ui/button';
-import Head from 'next/head';
-import useToggle from '@/utils/hooks/useToggle';
-import { MobileNavMenu, Navbar } from '@/components/navbar';
-import { Footer } from '@/components/footer';
+import { Box, VStack } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/button'
+import Head from 'next/head'
+import useToggle from '@/utils/hooks/useToggle'
+import { MobileNavMenu, Navbar } from '@/components/navbar'
+import { Footer } from '@/components/footer'
 
 const Container = ({ children, ...customMeta }) => {
-  const [isOpen, toggleIsOpen] = useToggle();
+  const [isOpen, toggleIsOpen] = useToggle()
 
   return (
     <Box>
@@ -34,18 +34,18 @@ const Container = ({ children, ...customMeta }) => {
         </VStack>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
 const Seo = ({ ...customMeta }) => {
   const meta = {
-    title: 'Greg Ogun',
+    title: 'chrisloarryn',
     description:
       'Self-taught developer with a focus on designing and building scalable, maintainable and accessible solutions on the web.',
     image: 'https://gregogun.com/static/images/banner.png',
     type: 'website',
     ...customMeta
-  };
+  }
 
   return (
     <Head>
@@ -53,7 +53,7 @@ const Seo = ({ ...customMeta }) => {
       <meta content={meta.description} name="description" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-  );
-};
+  )
+}
 
-export default Container;
+export default Container

@@ -1,4 +1,4 @@
-import { VStack } from '@chakra-ui/layout';
+import { VStack } from '@chakra-ui/layout'
 
 const ContentWrapper = ({ children }) => {
   return (
@@ -12,7 +12,7 @@ const ContentWrapper = ({ children }) => {
     >
       {children}
     </VStack>
-  );
-};
+  )
+}
 
-export default ContentWrapper;
+export default ContentWrapper
