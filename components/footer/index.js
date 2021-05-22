@@ -127,14 +127,6 @@ const Socials = () => {
       >
         Twitch
       </SocialLink>
-      <SocialLink
-        color={youtube.color}
-        icon={youtube.icon}
-        href={youtube.href}
-        name={youtube.name}
-      >
-        Youtube
-      </SocialLink>
     </VStack>
   )
 }
