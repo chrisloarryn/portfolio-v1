@@ -16,7 +16,7 @@ export const github = {
 
 export const linkedin = {
   icon: SiLinkedin,
-  href: 'https://www.linkedin.com/in/greg-ogun/',
+  href: 'https://www.linkedin.com/in/chrisloarryn/',
   name: 'linkedin',
   color: '#0A66C2'
 }
