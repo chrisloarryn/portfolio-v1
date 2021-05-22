@@ -24,7 +24,7 @@ export const Footer = () => {
         variant="noStyle"
         align="center"
       >
-        © Designed and coded by Greg Ogun
+        © Designed and coded by chrisloarryn
       </Link>
     </VStack>
   )
