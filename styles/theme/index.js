@@ -1,52 +1,32 @@
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react';
+import { createBreakpoints } from '@chakra-ui/theme-tools';
+import { styles } from './styles';
+import { colors } from './colors';
+import { Heading, Text, fonts, textStyles } from './typography';
+import { Button } from './components/button';
+import { Link } from './components/link';
 
-const theme = extendTheme({
-  styles: {
-    global: (props) => ({
-      body: {
-        overflowX: 'hidden',
-        color: props.colorMode === 'light' ? 'default.dark' : 'default.light',
-        bg: props.colorMode === 'light' ? 'default.light' : 'default.dark'
-      }
-    })
-  },
-  colors: {
-    default: {
-      light: '#fcfcfc',
-      dark: '#232323'
-    },
-    primary: {
-      100: '#D1C1F4',
-      200: '#B199E7',
-      300: '#9C7DE4',
-      400: '#8F67D7',
-      500: '#805AD5',
-      600: '#744EC8',
-      700: '#311968'
-    },
-    secondary: {
-      100: '#E6FFFA',
-      200: '#B2F5EA',
-      300: '#81E6D9',
-      400: '#4FD1C5',
-      500: '#38B2AC',
-      600: '#319795',
-      700: '#2C7A7B'
-    },
-    neutral: {
-      100: '#F4F4F4',
-      200: '#D9D9D9',
-      300: '#A6A6A6',
-      400: '#8C8C8C',
-      500: '#737373',
-      600: '#595959',
-      700: '#404040'
-    }
-  },
-  fonts: {
-    heading: 'Sora',
-    body: 'Sora'
+const breakpoints = createBreakpoints({
+  sm: '30em',
+  md: '48em',
+  lg: '62em',
+  xl: '80em',
+  '2xl': '90em',
+  '3xl': '120em'
+});
+
+const overrides = {
+  breakpoints,
+  styles,
+  colors,
+  fonts,
+  textStyles,
+  components: {
+    Button,
+    Link,
+    Heading,
+    Text
   }
-})
+};
 
-export default theme
+export default extendTheme(overrides);

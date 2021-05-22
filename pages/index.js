@@ -1,94 +1,172 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import {
+  Heading,
+  Flex,
+  Text,
+  VStack,
+  Box,
+  useMediaQuery,
+  Button,
+  Link,
+  List
+} from '@chakra-ui/react'
+import NextLink from 'next/link'
+import Container from '@/layouts/container'
+import { HeroVisual } from '@/components/svg/heroVisual'
+import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher'
+import Subscribe from '@/components/subscribe'
+import projects from '@/data/projects'
+import { ProjectCard } from '@/components/projectCard'
 
-import '@fontsource/sora/400.css'
-import '@fontsource/sora/700.css'
-import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react'
-
-export default function Home() {
+export default function Homepage() {
   return (
-    <Flex
-      minH="100vh"
-      p="0 0.5rem"
-      direction="column"
-      justify="center"
-      align="center"
-    >
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Container>
+      <ContentWrapper>
+        <Hero />
+        <FeaturedProjects />
+        <Subscribe />
+      </ContentWrapper>
+    </Container>
+  )
+}
 
-      <Flex
-        as="main"
-        p="5rem 0"
-        flex="1"
-        direction="column"
-        justify="center"
-        align="center"
+const Hero = () => {
+  const [isXtraLarge] = useMediaQuery('(min-width: 1280px)')
+  return (
+    <Flex justify="space-between" w={{ base: '90%', sm: '100%' }}>
+      <Box
+        // m={!isXtraLarge && 'auto'}
+        w={{ base: '100%', xl: '50%' }}
       >
-        <Heading m="0" lineHeight="1.15" fontSize="4rem" textAlign="center">
-          Welcome to{' '}
-          <Link
-            color="blue.500"
-            textDecor="none"
-            _hover={{ textDecor: 'underline' }}
-            _focus={{ textDecor: 'underline' }}
-            _active={{ textDecor: 'underline' }}
-            href="https://nextjs.org"
-          >
-            Next.js!
-          </Link>
+        <Heading mb="0.5rem" as="h1" variant="h1">
+          Hi, I’m Cristobal Contreras.
         </Heading>
-
-        <Text lineHeight="1.5" fontSize="1.5rem">
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+        <Text mb={{ base: '4rem', lg: '6rem' }} as="h2" variant="subtitle">
+          Welcome to my corner of the internet, where you can find my works,
+          thoughts, favourite coffee and other random things.
         </Text>
-
-        <Box className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <Heading>Documentation &rarr;</Heading>
-            <Text>
-              Find in-depth information about Next.js features and API.
-            </Text>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </Box>
-      </Flex>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+        <Heading as="h3" variant="h3" mb="0.5rem">
+          Ok, but who are you?
+        </Heading>
+        <Text fontSize="xl" mb="2rem">
+          I’m a curiosity-driven, design-focused developer, building rich,
+          user-centric, inclusive experiences on the web.
+        </Text>
+        <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
+          Feel free to have a look around, and learn more about myself and what
+          I like to work on.{' '}
+        </Text>
+        <Button
+          as="a"
+          href="mailto:chrisloarryn@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
+          variant="primaryThemed"
+          size="lg"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+          Get in touch
+        </Button>
+      </Box>
+      {isXtraLarge && <HeroVisual />}
     </Flex>
+  )
+}
+
+const FeaturedProjects = () => {
+  return (
+    <VStack spacing="4rem" w="100%" m="auto">
+      <FeatureHeading>Featured Projects</FeatureHeading>
+      <Flex
+        w="100%"
+        mb="2.5rem"
+        direction={{ base: 'column', xl: 'row' }}
+        justify="space-evenly"
+      >
+        <Projects />
+      </Flex>
+      <NextLink href="/projects" passHref>
+        <Button
+          as="a"
+          textTransform="capitalize"
+          display="block"
+          textAlign="center"
+          fontSize={{ base: 'lg', lg: 'xl' }}
+          variant="secondaryThemed"
+        >
+          See all projects
+        </Button>
+      </NextLink>
+    </VStack>
+  )
+}
+
+const Projects = () => {
+  return (
+    <List
+      mx="auto"
+      justifyContent="space-between"
+      display={{ base: 'block', '2xl': 'flex' }}
+    >
+      {projects.map((project) => (
+        <ProjectCard project={project} key={project.id} />
+      ))}
+    </List>
+  )
+}
+
+const FeaturedArticles = () => {
+  return (
+    <VStack spacing="4rem" w="100%" mx="auto">
+      <FeatureHeading>Featured Articles</FeatureHeading>
+      <ArticleCard />
+      <ArticleCard />
+      <NextLink href="/blog" passHref>
+        <Link
+          display="block"
+          textAlign="center"
+          fontSize={{ base: 'lg', lg: '2xl' }}
+        >
+          Read all articles
+        </Link>
+      </NextLink>
+    </VStack>
+  )
+}
+
+export const ArticleCard = () => {
+  const { colorGrey } = useColorModeSwitcher()
+  return (
+    <Box
+      mx="auto"
+      p="2rem"
+      border="2px solid"
+      borderColor={colorGrey}
+      w={{ base: '21em', lg: '57.5rem' }}
+    >
+      <Heading textTransform="capitalize" as="h4" variant="h4" mb="0.5rem">
+        A heading for my amazing blog post
+      </Heading>
+      <Text variant="body" mb="2rem">
+        This is some arbitrary subtitle for my amazing blog post that you should
+        most definitely read!
+      </Text>
+      <Flex>
+        <Text>Read more</Text>
+        <Text>
+          <span>→</span>
+        </Text>
+      </Flex>
+    </Box>
+  )
+}
+
+const ContentWrapper = ({ children }) => {
+  return <VStack spacing={{ base: '10rem', lg: '15rem' }}>{children}</VStack>
+}
+
+const FeatureHeading = ({ children }) => {
+  return (
+    <Heading textAlign="center" as="h2" variant="h2">
+      {children}
+    </Heading>
   )
 }
