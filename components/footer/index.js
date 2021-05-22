@@ -1,13 +1,13 @@
-import NextLink from 'next/link';
-import useToggle from '@/utils/hooks/useToggle';
-import { Icon } from '@chakra-ui/icons';
-import { Link, HStack, VStack, Center } from '@chakra-ui/layout';
-import { useMediaQuery } from '@chakra-ui/media-query';
-import VisuallyHidden from '@chakra-ui/visually-hidden';
-import { github, linkedin, twitch, twitter, youtube } from '@/data/socials';
+import NextLink from 'next/link'
+import useToggle from '@/utils/hooks/useToggle'
+import { Icon } from '@chakra-ui/icons'
+import { Link, HStack, VStack, Center } from '@chakra-ui/layout'
+import { useMediaQuery } from '@chakra-ui/media-query'
+import VisuallyHidden from '@chakra-ui/visually-hidden'
+import { github, linkedin, twitch, twitter } from '@/data/socials'
 
 export const Footer = () => {
-  const [isLarge] = useMediaQuery('(min-width: 992px)');
+  const [isLarge] = useMediaQuery('(min-width: 992px)')
   return (
     <VStack
       borderTop="1px solid"
@@ -27,8 +27,8 @@ export const Footer = () => {
         © Designed and coded by Greg Ogun
       </Link>
     </VStack>
-  );
-};
+  )
+}
 
 const Condensed = () => {
   return (
@@ -57,15 +57,9 @@ const Condensed = () => {
         href={twitch.href}
         name={twitch.name}
       />
-      <SocialLink
-        color={youtube.color}
-        icon={youtube.icon}
-        href={youtube.href}
-        name={youtube.name}
-      />
     </HStack>
-  );
-};
+  )
+}
 
 const Full = () => {
   return (
@@ -74,8 +68,8 @@ const Full = () => {
       <SubRoutes />
       <Socials />
     </HStack>
-  );
-};
+  )
+}
 
 const MainRoutes = () => {
   return (
@@ -85,8 +79,8 @@ const MainRoutes = () => {
       <NavLink href="/projects">Projects</NavLink>
       <NavLink href="/blog">Blog</NavLink>
     </VStack>
-  );
-};
+  )
+}
 
 const SubRoutes = () => {
   return (
@@ -95,8 +89,8 @@ const SubRoutes = () => {
       <NavLink href="/community">Community</NavLink>
       <NavLink href="/uses">Uses</NavLink>
     </VStack>
-  );
-};
+  )
+}
 
 const Socials = () => {
   return (
@@ -142,12 +136,12 @@ const Socials = () => {
         Youtube
       </SocialLink>
     </VStack>
-  );
-};
+  )
+}
 
 const SocialLink = ({ children, color, icon, href, name }) => {
-  const [hover, toggleHover] = useToggle();
-  const [isLarge] = useMediaQuery('(min-width: 992px)');
+  const [hover, toggleHover] = useToggle()
+  const [isLarge] = useMediaQuery('(min-width: 992px)')
   return (
     <Center
       onMouseEnter={toggleHover}
@@ -176,13 +170,13 @@ const SocialLink = ({ children, color, icon, href, name }) => {
         {!isLarge && <VisuallyHidden>{name}</VisuallyHidden>}
       </Link>
     </Center>
-  );
-};
+  )
+}
 
 const NavLink = ({ href, children }) => {
   return (
     <NextLink href={href} passHref>
       <Link variant="subtle">{children}</Link>
     </NextLink>
-  );
-};
+  )
+}

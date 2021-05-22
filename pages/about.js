@@ -14,7 +14,7 @@ import * as tool from '@/data/tools'
 import Icon from '@chakra-ui/icon'
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher'
 import useToggle from '@/utils/hooks/useToggle'
-import { youtube, twitch, discord } from '@/data/socials'
+import { twitch, discord } from '@/data/socials'
 
 const About = () => {
   return (
@@ -60,11 +60,6 @@ const Intro = () => {
           applications, using popular UI tools such as styled components, Chakra
           UI and Storybook to help me bring my designs to life through creating,
           documenting and testing reusable components.{' '}
-        </Text>
-        <Text mb="2rem">
-          I love to learn and build in public, which I’ve taken to the next
-          level through live coding on <Link href={twitch.href}>Twitch</Link>{' '}
-          and <Link href={youtube.href}>Youtube</Link>.
         </Text>
         <Text mb="6.5rem">
           I’ve also recently become a Facilitator at{' '}
