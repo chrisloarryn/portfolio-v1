@@ -30,7 +30,7 @@ export const Navbar = ({ isOpen, toggleIsOpen }) => {
           <Item variant="noStyle" href="/projects">
             Projects
           </Item>
-          <Item isExternal variant="noStyle" href="/chrisloarryn-cv-2021.pdf">
+          <Item isExternal variant="noStyle" href="/cv220520133000.pdf">
             CV
           </Item>
         </Flex>
